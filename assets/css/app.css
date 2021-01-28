@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+#container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#generate-color-button {
+    max-width: 300px;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1rem;
+    background: none;
+    outline-style: none;
+    border: 3px solid black;
+    border-radius: 0.5rem;
+    transition: color 200ms ease-in-out, background-color 200ms ease-in-out, transform 200ms;
+}
+
+#generate-color-button:active {
+    color: white;
+    background-color: darkblue;
+    transform: scale(1.2);
+}
+
+.stars {
+    cursor: pointer;
+}
