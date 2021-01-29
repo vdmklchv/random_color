@@ -94,6 +94,13 @@ function createColor() {
             newColor[key] = getRandomNumber();
         }
     }
+    if (newColor.red <= 70 && newColor.green <= 70 && newColor.blue <= 70) {
+        heading.classList.add('white');
+        generateColorButton.classList.add('white', 'white-border');
+    } else {
+        heading.classList.remove('white');
+        generateColorButton.classList.remove('white', 'white-border');
+    }
     currentColor = newColor;
     return new RGBColor(newColor.red, newColor.green, newColor.blue);
 }
