@@ -32,13 +32,15 @@ const starState = {
 // Event listeners
 heading.addEventListener('click', (e) => {
     const starColor = e.target.id.split('-')[0];
-    console.log(starColor);
-    if (starState[starColor] === false) {
-        starState[starColor] = true;
-        e.target.innerHTML = '&starf;';
-    } else {
-        starState[starColor] = false;
-        e.target.innerHTML = '&star;';
+    if (e.target.id.split('-')[1] === 'star') {
+        if (starState[starColor] === false) {
+            starState[starColor] = true;
+            //e.target.childNodes.item(`#${starColor}-star`).innerHTML = '&starf;';
+            document.querySelector(`#${e.target.id}`).innerHTML = '&starf;';
+        } else {
+            starState[starColor] = false;
+            e.target.innerHTML = '&star;';
+        }
     }
 });
 
