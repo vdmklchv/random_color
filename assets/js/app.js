@@ -31,34 +31,14 @@ const starState = {
 
 // Event listeners
 heading.addEventListener('click', (e) => {
-    switch (e.target.id) {
-        case 'red-star':
-            if (starState.red === false) {
-                starState.red = true;
-                e.target.innerHTML = '&starf;';
-            } else {
-                starState.red = false;
-                e.target.innerHTML = '&star;';
-            }
-            break;
-        case 'green-star':
-            if (starState.green === false) {
-                starState.green = true;
-                e.target.innerHTML = '&starf;';
-            } else {
-                starState.green = false;
-                e.target.innerHTML = '&star;';
-            }
-            break;
-        case 'blue-star':
-            if (starState.blue === false) {
-                starState.blue = true;
-                e.target.innerHTML = '&starf;';
-            } else {
-                starState.blue = false;
-                e.target.innerHTML = '&star;';
-            }
-            break;
+    const starColor = e.target.id.split('-')[0];
+    console.log(starColor);
+    if (starState[starColor] === false) {
+        starState[starColor] = true;
+        e.target.innerHTML = '&starf;';
+    } else {
+        starState[starColor] = false;
+        e.target.innerHTML = '&star;';
     }
 });
 
